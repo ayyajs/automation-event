@@ -1,0 +1,68 @@
+$(function () {
+   $("#frm_product").validate({ 
+      rules    : {
+         frm_productname: {
+            required :  true,
+         },
+         frm_category : {
+            required :  true,
+         },
+         frm_description : {
+            required :  true,
+         },
+         frm_date : {
+            required :  true,
+         },
+         frm_image: {
+           required : function(element) {
+               var image_exists = $("#hd_image_exists").val();
+               if(image_exists == 0) {
+                   return true;
+               } else { 
+                   return false;
+               }
+           },
+           extension: "jpg|jpeg|png",
+         },
+         frm_days : {
+            required :  true,
+         },
+         'frm_sales_location[]' : {
+            required :  true,
+         },
+         frm_status : {
+            required :  true,
+         },
+      },
+      messages : {
+         frm_productname : {
+            required    :  "Please enter product name",
+         },
+         frm_category : {
+            required    :  "Please select category",
+         },
+         frm_description : {
+            required    :  "Please enter product description",
+         },
+         frm_date : {
+            required    :  "Please select available date",
+         },
+         frm_image: {
+            required: "Please upload image",
+            extension: "Please upload file in these format only (jpg, jpeg, png)",
+         },
+         frm_days : {
+            required    :  "Please select available days",
+         },
+         'frm_sales_location[]' : {
+            required    :  "Please choose sales location",
+         },
+         frm_status : {
+            required    :  "Please select status",
+         },
+      },
+      submitHandler: function(form) {
+               form.submit();
+         }
+   });
+});

@@ -1,0 +1,4 @@
+
+Folder permission:
+
+sudo chmod 0777 -R var/www/html/event-management-oops/uploads

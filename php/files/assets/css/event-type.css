@@ -1,0 +1,293 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #c4cdd161;
+
+}
+#outer_section{
+	width: 100%;
+	float: left;
+	/*padding: 50px 0px;*/
+}
+.outer_form{
+	width: 80%;
+	height: 100vh;
+	float: left;
+	background-color: #e3eef300;
+	/*margin: 0 auto;*/
+}
+#frm_event_type{
+	width: 90%;
+	height: 100vh;
+	margin: 0 auto;
+	border-radius: 5px;
+	/*background-color: #fff;*/
+}
+.head{
+	text-align: center;
+	font-size: 25px;
+}
+.input_row{
+	width: 100%;
+	float: left;
+	display: flex;
+	padding: 10px 0px;
+} 
+.left_col{
+	width: 30%;
+	float: left;
+	text-align: right;
+}
+.right_col{
+	width: 70%;
+	float: right;
+	margin-bottom: 5px;
+}
+.star{
+	color: red;
+	margin-left: 5px;
+}
+.input_label{
+	font-weight: bold;
+	padding-right: 20px;
+}
+.input_field{
+	width: 70%;
+	border-radius: 5px;
+	border: 1px solid gray;
+	padding: 10px;
+	display: block;
+}
+.status_field{
+	float: left;
+	width: 100%;
+	margin-right: 10px;
+}
+
+.button{
+	color: white;
+    background-color: #7c8c93de;
+    border: none;
+    font-size: 12px;
+    width: 110px;
+    height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+.button_row
+{
+	width: 100%;
+	float: left;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+.cursor{
+	cursor: pointer;
+}
+.error{
+	color: red;
+}
+.success_msg{
+	text-align: center;
+	color: green;
+	font-weight: bold;
+}
+.error_msg{
+	text-align: center;
+	color: red;
+	font-weight: bold;
+}
+.side_menu{
+	float: left;
+	padding-left: 20px;
+	padding-right: 5px;
+	width: 18%;
+	height:100vh;
+	background-color: #000000cc;
+}
+.side_menu ul {
+	padding-left: 20px;
+	margin-top: 3px;
+}
+.side_menu ul li{
+	list-style: none;
+}
+.side_menu ul li a{
+	text-decoration: none;
+	line-height: 22px;
+	color: white;
+}
+
+	// List css
+
+#section {
+	width: 100%;
+	float: left;
+	/*padding: 50px 0px;*/
+}
+.table_out{
+	width: 82%;
+	margin: 0 auto;
+	display: table;
+}
+/*.table{
+	display: table;
+    border-collapse: collapse;
+}*/
+.title{
+	width: 100%;
+	text-align: center;
+	font-size: 20px; 
+	padding: 15px 0px;
+}
+.table {
+	display: table;
+	border-collapse: collapse;
+	border: 1px solid black;
+	width: 100%;
+  }
+  .tr {    
+	  display: table-row;
+	  border: 1px solid black;
+  }
+  .th{
+	  display: table-cell;
+	  padding: 7px;
+	  border-left: 1px solid black;
+	  background-color: #080707b5;
+	  color: white;
+	  /*width: 7.13%;*/	
+	  text-align: center;
+  }
+  .td {
+	  display: table-cell;
+	  padding: 7px;
+	  border-left: 1px solid black;
+	  vertical-align: top;
+	  /*width: 7.13%*/;
+  }
+  .menu_head{
+	color: white;
+	margin-bottom: 0px;
+}
+.menu_head_one{
+	color: white;
+	margin-bottom:0px;
+	margin-top: 35px;
+}
+  .side_menu ul li{
+	  list-style: none;
+  }
+  .side_menu ul li a{
+	  text-decoration: none;
+	  line-height: 22px;
+  }
+  .fa-plus-square
+  {
+	  margin-right: 5px;
+  }
+  .fa-th-list
+  {
+	  margin-right: 5px;
+  }
+  .fa-pencil::before
+  {
+	  font-size: 18px;
+	  color: gray;
+  }
+  .fa-trash::before
+  {
+	  cursor: pointer;
+	  color: gray;
+	  font-size: 18px;
+  }
+  .record{
+	  width: 100%;
+	text-align: center;
+	color: red;
+	padding: 50px 0px;
+	border: 1px solid black;
+}
+.number{
+	width: 8%;
+}
+.action{
+	width: 15%;
+}
+.data_action{
+	text-align: center;
+}	
+.error_record
+{
+	width: 40%;
+	height: 420px;
+	background-color: #fff;
+	color: red;
+	margin: 0 auto;
+	border-radius: 5px	;
+}
+.no_record
+{
+	text-align: center;
+	padding-top: 190px;
+}
+.green{
+	color: green;
+}
+.red{
+	color: red;
+}
+.heading{
+	width: 100%;
+	height: 40px;
+	background-color: #dadfce9e;
+}
+.heading h4{
+	margin: 0px;
+	padding-top: 10px;
+	margin-left: 10px;
+}
+.fillter{
+	width: 100%;
+	height: 120px;
+	border: 1px solid black;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.fillter_field{
+	width: 100%;
+	margin-top: 10px;
+}
+.filter_name {
+	font-weight: bold;
+	margin-left: 20px;
+}
+.filter_text{
+	padding: 4px;
+	margin-right: 20px;
+	border-radius: 4px;
+	border: 1px solid;
+}
+.serach_button{
+	width: 100%;
+	text-align: right;
+	margin-top: 10px;
+}
+.button_search{
+	  color: white;
+    background-color: #7c8c93de;
+    border: none;
+    font-size: 12px;
+    width: 95px;
+    height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px;
+}

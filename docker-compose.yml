@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+    eventwebserver:
+        container_name: event-apache
+        build:
+            context: ./php
+            dockerfile: Dockerfile
+        depends_on:
+            - db
+        ports:
+            - 9000:80
+    db:
+        container_name: event-mysql
+        build:
+            context: ./mysql
+            dockerfile: Dockerfile
+        restart: always       
+        volumes:            
+            - ./mysql:/docker-entrypoint-initdb.d
+            - ./../data/event-storage:/var/lib/mysql                 #Initial create folder data/event-storage
+    phpmyadmin:
+        container_name: event-phpmyadmin
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - '9001:80'
+        restart: always
+        environment:
+            PMA_HOST: db
+        depends_on:
+            - db
