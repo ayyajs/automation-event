@@ -1,0 +1,19 @@
+{
+    "name": "admin-panel/backend",
+    "description": "Admin Panel Backend API",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "firebase/php-jwt": "^6.8",
+        "mpdf/mpdf": "^8.2",
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "AdminPanel\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
