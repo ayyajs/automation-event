@@ -3,8 +3,8 @@ services:
     eventwebserver:
         container_name: event-apache
         build:
-            context: ./php
-            dockerfile: Dockerfile
+            context: .
+            dockerfile: php/Dockerfile
         depends_on:
             - db
         ports:
