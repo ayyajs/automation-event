@@ -1,30 +1,69 @@
 version: '3.8'
 services:
-    eventwebserver:
-        container_name: event-apache
-        build:
-            context: ./php
-            dockerfile: Dockerfile
-        depends_on:
-            - db
-        ports:
-            - 9000:80
-    db:
-        container_name: event-mysql
-        build:
-            context: ./mysql
-            dockerfile: Dockerfile
-        restart: always       
-        volumes:            
-            - ./mysql:/docker-entrypoint-initdb.d
-            - ./../data/event-storage:/var/lib/mysql                 #Initial create folder data/event-storage
-    phpmyadmin:
-        container_name: event-phpmyadmin
-        image: phpmyadmin/phpmyadmin
-        ports:
-            - '9001:80'
-        restart: always
-        environment:
-            PMA_HOST: db
-        depends_on:
-            - db
+  # PHP Backend with Apache
+  backend:
+    container_name: admin-panel-backend
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "9000:80"
+    volumes:
+      - ./php:/var/www/html
+    environment:
+      - DB_HOST=db
+      - DB_NAME=admin_panel
+      - DB_USER=root
+      - DB_PASS=root
+
+  # MySQL Database
+  db:
+    container_name: admin-panel-mysql
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: admin_panel
+    volumes:
+      - ./mysql/admin_panel_schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  # phpMyAdmin
+  phpmyadmin:
+    container_name: admin-panel-phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - '9001:80'
+    restart: always
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root
+    depends_on:
+      - db
+
+  # React Frontend (Development)
+  frontend:
+    container_name: admin-panel-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - REACT_APP_API_URL=http://localhost:9000
+    stdin_open: true
+    tty: true
+
+volumes:
+  mysql_data:
